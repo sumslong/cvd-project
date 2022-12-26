@@ -1,0 +1,145 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+.myDiv {
+    border-radius: 25px;
+    border: 2px solid #800000;
+    padding: 20px;
+    width: 80%;
+    background-color: #f2f2f2;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  padding: 15px 25px;
+  font-size: 20px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #800000;
+  border: none;
+  border-radius: 25px;
+  box-shadow: 0 5px #999;
+}
+
+.button:hover {background-color: #fd6c6c}
+
+.button:active {
+  background-color: #fd6c6c;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.button1 {
+    border-radius: 25px;
+    margin:auto;
+    width: 30%;
+    text-align: center;
+    border: 2px solid #800000;
+    padding: 10px;
+    background-color: #c44242;
+}
+
+</style>
+
+</head>
+
+<body>
+    <br>
+    <h1 style="text-align: center;">Educational Resources For You</h1><br>
+
+    <div class="myDiv" style="margin:0 auto;">
+        <h2>{{ article1.1 }}</h2>
+        <p>{{article1.2}}</p>
+        <a href={{article1.0}} style = "color:maroon; text-decoration: none;">Article Link</a>
+        <p>
+            {{article1.3}}
+        </p>
+        <p><i><b>Reading level: {{ article1.4 }}</b> (Reading score: {{ article1.5 }})</i></p>
+      </div>
+     <br>
+     <br>
+
+    <div class="myDiv" style="margin:0 auto;">
+        <h2>{{ article2.1 }}</h2>
+        <p>{{article2.2}}</p>
+        <a href={{article2.0}} style = "color:maroon; text-decoration: none;">Article Link</a>
+        <p>
+            {{article2.3}}
+        </p>
+        <p><i><b>Reading level: {{ article2.4 }}</b> (Reading score: {{ article2.5 }})</i></p>
+      </div>
+     <br>
+     <br>
+    
+    <div class="myDiv" style="margin:0 auto;">
+        <h2>{{ article3.1 }}</h2>
+        <p>{{article3.2}}</p>
+        <a href={{article3.0}} style = "color:maroon; text-decoration: none;">Article Link</a>
+        <p>
+            {{article3.3}}
+        </p>
+        <p><i><b>Reading level: {{ article3.4 }}</b> (Reading score: {{ article3.5 }})</i></p>
+      </div>
+     <br>
+     <br>
+    
+    <div class="myDiv" style="margin:0 auto;">
+        <h2>{{ article4.1 }}</h2>
+        <p>{{article4.2}}</p>
+        <a href={{article4.0}} style = "color:maroon; text-decoration: none;">Article Link</a>
+        <p>
+            {{article4.3}}
+        </p>
+        <p><i><b>Reading level: {{ article4.4 }}</b> (Reading score: {{ article4.5 }})</i></p>
+      </div>
+     <br>
+     <br>
+    
+    <div class="myDiv" style="margin:0 auto;">
+        <h2>{{ article5.1 }}</h2>
+        <p>{{article5.2}}</p>
+        <a href={{article5.0}} style = "color:maroon; text-decoration: none;">Article Link</a>
+        <p>
+            {{article5.3}}
+        </p>
+        <p><i><b>Reading level: {{ article5.4 }}</b> (Reading score: {{ article5.5 }})</i></p>
+      </div>
+     <br>
+     <br>
+    
+    <div class="myDiv" style="margin:0 auto;">
+        <h2>Further reading:</h2>
+        <ul style="font-size: medium;">
+            <li><a href={{gs_links.0}} style = "color:maroon">{{gs_links.0}}</a></li>
+            <li><a href={{mayo_links.0}} style = "color:maroon">{{mayo_links.0}}</a></li>
+            <li><a href={{webmd_links.0}} style = "color:maroon">{{webmd_links.0}}</a></li>
+            <li><a href={{gs_links.1}} style = "color:maroon">{{gs_links.1}}</a></li>
+            <li><a href={{mayo_links.1}} style = "color:maroon">{{mayo_links.1}}</a></li>
+            <li><a href={{webmd_links.1}} style = "color:maroon">{{webmd_links.1}}</a></li>
+            <li><a href={{gs_links.2}} style = "color:maroon">{{gs_links.2}}</a></li>
+            <li><a href={{mayo_links.2}} style = "color:maroon">{{mayo_links.2}}</a></li>
+            <li><a href={{webmd_links.2}} style = "color:maroon">{{webmd_links.2}}</a></li>
+            <li><a href={{gs_links.3}} style = "color:maroon">{{gs_links.3}}</a></li>
+        </ul> 
+      </div>
+     <br>
+     <br>
+
+<button class="button" style="margin:0 auto; color:white" type="button">
+    <a href="{% url 'heart_health:outcome' %}" style = "color:white; text-decoration: none;">Back</a>
+</button>
+<br>
+<br>
+
+</body>
+</html>
+
+

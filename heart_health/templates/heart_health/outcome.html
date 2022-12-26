@@ -1,0 +1,160 @@
+{%load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+.wrapper {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.wrapper > div {
+    flex: 1;
+}
+
+.myDiv {
+    border-radius: 25px;
+    border: 2px solid #800000;
+    padding: 20px;
+    width: 80%;
+    background-color: #f2f2f2;
+    justify-self: center;
+    flex: 1;
+}
+
+.columns {
+  column-count: 2;
+  column-gap: 40px;
+  border-radius: 25px;
+  border: 2px solid #800000;
+  padding: 10px;
+  background-color: #f2f2f2;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  padding: 15px 25px;
+  font-size: 21px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #800000;
+  border: none;
+  border-radius: 25px;
+  box-shadow: 0 5px #999;
+}
+
+.button:hover {background-color: #fd6c6c}
+
+.button:active {
+  background-color: #fd6c6c;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.button1 {
+    border-radius: 25px;
+    margin:auto;
+    width: 30%;
+    text-align: center;
+    border: 2px solid #800000;
+    padding: 10px;
+    background-color: #c44242;
+}
+
+</style>
+
+</head>
+<body>
+
+<br>
+<h1 style="text-align: center;">Hi, {{ name }}!</h1>
+
+<br>
+
+<div class="wrapper">
+    <div class="myDiv">
+        <h2>Your Risk Score: {{ risk_score }} </h2>
+        <p>More information: </p>
+        <ul>
+            <li>Your BMI is <b>{{ BMI }}</b>, which is in the <b>{{BMI_rank}}</b> category.</li>
+            <br>
+            <li>{{ risk_str }}</li>
+        </ul>
+    </div>
+    <div class="myDiv">
+        <h2>Screening Recommendation: {{ screening_rec }} </h2>
+        <ul>
+        <li>Screening for heart disease is commonly done using a CT scan, an exercise stress test, or an EKG. </li>
+        <br>
+        <li>The average cost of screening for heart disease is approximately $400 or less.</li>
+        <br>
+        <li>The average cost of treatment for severe heart disease for hospital stay and follow-up care can be $35,000 and up.</li>
+        </ul>
+    </div>
+</div>
+
+<br>
+<br>
+<div class="myDiv" style="margin:0 auto;">
+    <p style="text-align: center; font-size: 20px;">
+        You live in a state with a mortality rate of <b>{{ mortality }}</b> deaths per 100,000 people per year.
+    </p>
+    <br>
+    <p style="text-align: center;">
+        <img src="/static/{{ map_path }}" width="600">
+    </p>
+</div>
+<br>
+<br>
+<div class="myDiv" style="margin:0 auto;">
+    <button class="button" style="margin:0 auto; color:white" type="button">
+        <a href="{% url 'heart_health:education' %}" 
+        style = "color:white; text-decoration: none;">Your Educational 
+        Guide To Heart Disease</a>
+    </button>
+    <br>
+    <p style="text-align: center; font-size: 18px;">
+        Find your curated guide with personalized article recommendations
+        based on your reading level and risk factors from scholarly sources.
+    </p>
+    <p style = "color:maroon; text-align: center">
+        Knowledge is power so it's worth the wait :) (Again, this may take 30 seconds)
+    </p>
+</div>
+<br>
+<br>
+<div class="myDiv" style="margin:0 auto;">
+    <p style="font-size: 18px;">
+        How was your risk score determined?
+    </p>
+    <ul style="font-size: medium;">
+        <li>Your risk score was determined based on a random 
+            forest machine learning algorithm trained and tested on a 
+            dataset of 70,000 people. The output of this machine learning algorithm
+            was then combined with a weighted points system that determined risk 
+            factors via 2-proportion z testing.</li>
+            </ul>
+    <p style="font-size: 18px;">
+        How was your screening recommendation determined?
+    </p>
+    <ul style="font-size: medium;">
+        <li>Your screening recommendation frequency was determined via an 
+            economic model that weighed the cost of screening for your lifetime
+            versus the weighted cost of severe heart disease (ultimately leading to
+            a heart attack).
+        </li>
+
+</div>
+<br>
+<br>
+
+</body>
+</html>

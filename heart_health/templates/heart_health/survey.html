@@ -1,0 +1,110 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: maroon;
+  color: white;
+  padding: 15px 25px;
+  border: none;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 5px #999;
+  font-size: 18px;
+}
+
+input[type=submit]:hover {
+  background-color: #fd6c6c;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.myDiv {
+    border-radius: 25px;
+    border: 2px solid #800000;
+    padding: 20px;
+    width: 65%;
+    background-color: #f2f2f2;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  padding: 15px 25px;
+  font-size: 21px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #800000;
+  border: none;
+  border-radius: 25px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {background-color: #fd6c6c}
+
+.button:active {
+  background-color: #fd6c6c;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.button1 {
+    border-radius: 25px;
+    margin:auto;
+    width: 30%;
+    text-align: center;
+    border: 2px solid #800000;
+    padding: 10px;
+    background-color: #c44242;
+}
+
+</style>
+
+</head>
+<body>
+<br>
+<h1 style="text-align: center;">Cardiovascular Health Survey</h1><br>
+<div class="myDiv" style="margin:0 auto;">
+    <form name = 'SurveyForm' action="{% url 'heart_health:outcome' %}" method="post" id="SurveyForm">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <br>
+
+      <button class = "button" type="submit" value="Submit" style="margin:0 auto; color:white">Submit</button>
+
+    </form>
+    <br>
+    <p style="color:maroon; text-align: center">Sit back, relax, and sip some tea :) Let the computer do the heavy lifting!</p>
+    <p style="color:maroon; text-align: center">(This may take 30 seconds to a minute)</p>
+  </div>
+
+<br>
+<br>
+</body>
+</html>
